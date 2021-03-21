@@ -29,6 +29,8 @@ button {
     background: rgb(0, 0, 0);
     color:rgb(160, 160, 160);
     font-style: oblique;
+    cursor: move;
+    border-radius: 20px;
 }
 #audio-player-container::before {
     position: absolute;
@@ -39,6 +41,7 @@ button {
     top: -2px;
     background: linear-gradient(to left, #fac229a8, #0c0c0cfd);
     z-index: -1;
+    border-radius: 5px;
 }
 p {
     position: absolute;
@@ -196,3 +199,13 @@ input[type="range"]:active::-ms-thumb {
   cursor: pointer;
   -webkit-user-drag: none;
 }
+/* Drag and Drop */
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }

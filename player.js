@@ -518,5 +518,61 @@ cool.oncontextmenu = ()=>{
     return false;
 };
 
+//DRAG AND DROP
+var dragSrcEl = null;
+//dragstart - gives some transparency when start to drag 
+function handleDragStart(e){
+    dragSrcEl = this;
 
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html',this.innerHTML);
+}
 
+//This section allows us to drop and move the info
+function handleDragOver(e){
+    if(e.preventDefault){
+        e.preventDefault(); //Neccesary. Allows us to drop and avoid the element to behave as an URL (default browser behaviour)
+    }
+    
+    e.dataTransfer.dropEffect = 'move'; //Gives the visual effect of drop
+    //Avoid the element to behave as an URL or as defult browser DnD
+    return false;
+}
+
+function handleDragEnter(e){
+    //this is the current hover target
+    this.classList.add('over');
+}
+//This both functions are bundled: its purpose is to replace the hover css animation (which would run too much times)
+function handleDragLeave(e){
+    //this is previous target element
+    this.classList.remove('over');
+}
+
+function handleDrop(e){
+    //once again, a line to avoid the default browser; stopPropagation will help us stop any redirecting
+    if (e.stopPropagation){
+        e.stopPropagation();
+    };
+    e.preventDefault();
+    
+    if (dragSrcEl != this){
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+    var files = e.dataTransfer.files;
+    for (let i = 0, f; f = files[i]; i++)
+
+    return false;
+}
+
+function handleDragEnd(e){
+    audioPlayerContainer.classList.remove('over');
+}
+
+audioPlayerContainer.addEventListener('dragstart',handleDragStart);
+audioPlayerContainer.addEventListener('dragover',handleDragOver);
+audioPlayerContainer.addEventListener('dragenter',handleDragEnter);
+audioPlayerContainer.addEventListener('dragleave',handleDragLeave);
+audioPlayerContainer.addEventListener('drop',handleDrop);
+audioPlayerContainer.addEventListener('dragend',handleDragEnd);
