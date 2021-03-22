@@ -6,6 +6,8 @@ body {
 }
 *{
   user-select: none;
+  -webkit-user-drag: none;
+  -moz-window-dragging: none;
 }
 button {
     padding: 0;
@@ -18,19 +20,18 @@ button {
     float: left;
 }
 #audio-player-container {
-  --seek-before-width: 0%;
-    --volume-before-width: 100%;
-    --buffered-width: 0%;
-    position: relative;
-    margin: 100px 2.5% auto 2.5%;
-    width: 95%;
-    max-width: 500px;
-    height: 264px;
-    background: rgb(0, 0, 0);
-    color:rgb(160, 160, 160);
-    font-style: oblique;
+    position:absolute;
     cursor: move;
     border-radius: 20px;
+    font-style: oblique;
+    color:rgb(160, 160, 160);
+    background: rgb(0, 0, 0);
+    height: 264px;
+    max-width: 500px;
+    width: 95%;
+    --seek-before-width: 0%;
+    --volume-before-width: 100%;
+    --buffered-width: 0%;
 }
 #audio-player-container::before {
     position: absolute;
@@ -199,13 +200,3 @@ input[type="range"]:active::-ms-thumb {
   cursor: pointer;
   -webkit-user-drag: none;
 }
-/* Drag and Drop */
-[draggable] {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    /* Required to make elements draggable in old WebKit */
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-  }
