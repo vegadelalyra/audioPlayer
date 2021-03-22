@@ -1,6 +1,4 @@
 /* Implementation of the presentation of the audio player */
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
-
 const playIconContainer = document.getElementById('play-icon');
 const audioPlayerContainer = document.getElementById('audio-player-container');
 const seekSlider = document.getElementById('seek-slider');
@@ -9,7 +7,7 @@ const muteIconContainer = document.getElementById('mute-icon');
 let playState = 'play';
 let muteState = 'unmute';
 
-const playAnimation = lottieWeb.loadAnimation({
+const playAnimation = lottie.loadAnimation({
   container: playIconContainer,
   path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json',
   renderer: 'svg',
@@ -18,7 +16,7 @@ const playAnimation = lottieWeb.loadAnimation({
   name: "Play Animation",
 });
 
-const muteAnimation = lottieWeb.loadAnimation({
+const muteAnimation = lottie.loadAnimation({
     container: muteIconContainer,
     path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/mute/mute.json',
     renderer: 'svg',
@@ -258,49 +256,49 @@ const y = (arr) => {
 
 //EPIC PLAYLIST ARRAY
 const epicPlaylist = [
-    "/playlists/epic/Armored Titan - Shingeki no Kyoji.mp3",
-    "/playlists/epic/Kara Theme - Detroit Become Human.mp3",
-    "/playlists/epic/The Opened Way - Shadow of the Colossus.mp3",
-    "/playlists/epic/Ultra Instinct - Dragon Ball Super.mp3",
+    "./playlists/epic/Armored Titan - Shingeki no Kyoji.mp3",
+    "./playlists/epic/Kara Theme - Detroit Become Human.mp3",
+    "./playlists/epic/The Opened Way - Shadow of the Colossus.mp3",
+    "./playlists/epic/Ultra Instinct - Dragon Ball Super.mp3",
 ];
 
 //REFLEX PLAYLIST ARRAY
 const reflexPlaylist = [
-    "/playlists/reflex/Death Note - Main Theme.mp3",
-    "/playlists/reflex/Final Fantasy - Prelude (Orchestral).mp3",
-    "/playlists/reflex/Floating Museum - Ghost In The Shell.mp3",
-    "/playlists/reflex/Gwyn, Lord of Cinder - Dark Souls.mp3",
+    "./playlists/reflex/Death Note - Main Theme.mp3",
+    "./playlists/reflex/Final Fantasy - Prelude (Orchestral).mp3",
+    "./playlists/reflex/Floating Museum - Ghost In The Shell.mp3",
+    "./playlists/reflex/Gwyn, Lord of Cinder - Dark Souls.mp3",
 ];
 
 
 //COOL PLAYLIST ARRAY
 const coolPlaylist = [
-    "/playlists/cool/Pearl Jam - Black.mp3",
-    "/playlists/cool/higurashi no naku koro ni opening full.mp3",
-    "/playlists/cool/Naruto Ending Theme - Wind by Akeboshi.mp3",
-    "/playlists/cool/Naruto Hinata Bicycle ending xd.mp3",
+    "./playlists/cool/Pearl Jam - Black.mp3",
+    "./playlists/cool/higurashi no naku koro ni opening full.mp3",
+    "./playlists/cool/Naruto Ending Theme - Wind by Akeboshi.mp3",
+    "./playlists/cool/Naruto Hinata Bicycle ending xd.mp3",
 ];
 
 //Epic playlist (fire button)
 var epic = document.querySelector("#epic");
-const fire = (e)=>{e.target.src="/img/epicOn.png"};
-const fireOff = (e)=>{e.target.src="/img/epic.png"};
+const fire = (e)=>{e.target.src="./img/epicOn.png"};
+const fireOff = (e)=>{e.target.src="./img/epic.png"};
 epic.addEventListener("mouseover",fire);
 epic.addEventListener("mouseout",fireOff);
 //To tune the playlist name and the lights up
 epic.addEventListener("click",(e)=>{ 
-    e.target.src="img/epicOn.png";
-    mind.src="img/mind.png";
-    cool.src="img/cool.png";
+    e.target.src="./img/epicOn.png";
+    mind.src="./img/mind.png";
+    cool.src="./img/cool.png";
     epic.removeEventListener("mouseout",fireOff);
     mind.addEventListener("mouseout",brainOff);
     cool.addEventListener("mouseout",chillOff);
     title.textContent = `epic playlist`;
 });
 epic.addEventListener("contextmenu",(e)=>{ 
-    e.target.src="img/epicOn.png";
-    mind.src="img/mind.png";
-    cool.src="img/cool.png";
+    e.target.src="./img/epicOn.png";
+    mind.src="./img/mind.png";
+    cool.src="./img/cool.png";
     epic.removeEventListener("mouseout",fireOff);
     mind.addEventListener("mouseout",brainOff);
     cool.addEventListener("mouseout",chillOff);
@@ -363,24 +361,24 @@ epic.oncontextmenu = ()=>{
 
 //Chill playlist (mind button)
 var mind = document.querySelector("#mind");
-const brain = (e)=>{e.target.src="/img/mindOn.png"};
-const brainOff = (e)=>{e.target.src="/img/mind.png"};
+const brain = (e)=>{e.target.src="./img/mindOn.png"};
+const brainOff = (e)=>{e.target.src="./img/mind.png"};
 mind.addEventListener("mouseover",brain);
 mind.addEventListener("mouseout",brainOff);
 //To tune the playlist name and the lights up
 mind.addEventListener("click",(e)=>{
-    e.target.src="img/mindOn.png";
-    epic.src="img/epic.png";
-    cool.src="img/cool.png";
+    e.target.src="./img/mindOn.png";
+    epic.src="./img/epic.png";
+    cool.src="./img/cool.png";
     mind.removeEventListener("mouseout",brainOff);
     epic.addEventListener("mouseout",fireOff);
     cool.addEventListener("mouseout",chillOff);
     title.textContent = `reflex playlist`;
 });
 mind.addEventListener("contextmenu",(e)=>{
-    e.target.src="img/mindOn.png";
-    epic.src="img/epic.png";
-    cool.src="img/cool.png";
+    e.target.src="./img/mindOn.png";
+    epic.src="./img/epic.png";
+    cool.src="./img/cool.png";
     mind.removeEventListener("mouseout",brainOff);
     epic.addEventListener("mouseout",fireOff);
     cool.addEventListener("mouseout",chillOff);
@@ -442,24 +440,24 @@ mind.oncontextmenu = ()=>{
 
 //Cool playlist (sunglasses button)
 var cool = document.querySelector("#cool");
-const chill = (e)=>{e.target.src="/img/coolOn.png"};
-const chillOff = (e)=>{e.target.src="/img/cool.png"};
+const chill = (e)=>{e.target.src="./img/coolOn.png"};
+const chillOff = (e)=>{e.target.src="./img/cool.png"};
 cool.addEventListener("mouseover",chill);
 cool.addEventListener("mouseout",chillOff);
 //To tune the playlist name and the lights up
 cool.addEventListener("click",(e)=>{
-    e.target.src="img/coolOn.png";
-    mind.src="img/mind.png";
-    epic.src="img/epic.png";
+    e.target.src="./img/coolOn.png";
+    mind.src="./img/mind.png";
+    epic.src="./img/epic.png";
     cool.removeEventListener("mouseout",chillOff);
     mind.addEventListener("mouseout",brainOff);
     epic.addEventListener("mouseout",fireOff);
     title.textContent = `cool playlist`;
 });
 cool.addEventListener("contextmenu",(e)=>{
-    e.target.src="img/coolOn.png";
-    mind.src="img/mind.png";
-    epic.src="img/epic.png";
+    e.target.src="./img/coolOn.png";
+    mind.src="./img/mind.png";
+    epic.src="./img/epic.png";
     cool.removeEventListener("mouseout",chillOff);
     mind.addEventListener("mouseout",brainOff);
     epic.addEventListener("mouseout",fireOff);

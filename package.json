@@ -1,0 +1,31 @@
+{
+  "name": "audio-player",
+  "version": "1.0.0",
+  "description": "Design of a draggable and toggeable audio player for 300 website",
+  "main": "player.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vegadelalyra/audioPlayer.git"
+  },
+  "keywords": [
+    "audioPlayer",
+    "300",
+    "JS",
+    "draggable",
+    "toggeable",
+    "lottie",
+    "npm"
+  ],
+  "author": "Vega de la Lyra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vegadelalyra/audioPlayer/issues"
+  },
+  "homepage": "https://github.com/vegadelalyra/audioPlayer#readme",
+  "dependencies": {
+    "lottie-web": "^5.7.7"
+  }
+}
