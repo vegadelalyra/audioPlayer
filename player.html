@@ -11,30 +11,35 @@
 <body>
 
     <!-- Audio player dashboard -->
-    <div id="audio-player-container">
-        <!-- The default song played -->
-        <audio src="./playlists/reflex/Floating Museum - Ghost In The Shell.mp3" preload="auto"></audio>
+    <div id="draggableDiv">
+        <details>
         <!-- Playlist name -->
-        <p id="plays">secret playlist</p>
-        <!-- Play/pause button -->
-        <button id="play-icon"></button>
-        <!-- Current time mark -->
-        <span id="current-time" class="time">0:00</span>
-        <!-- Seek slider -->
-        <input type="range" id="seek-slider" max="100" value="0">
-        <!-- Audio duration -->
-        <span id="duration" class="time">0:00</span>
-        <!-- Volume output -->
-        <output id="volume-output">100</output>
-        <!-- Volume slider -->
-        <input type="range" id="volume-slider" max="100" value="100">
-        <!-- Audio/mute button -->
-        <button id="mute-icon"></button>
-        <!-- button/images for playlists -->
-        <img id="epic" class="imai" src="./img/epic.png" height="100px" width="100px">
-        <img id="mind" class="imai" src="./img/mind.png" height="100px" width="100px">
-        <img id="cool" class="imai" src="./img/cool.png" height="100px" width="100px">
+        <summary><p id="plays">secret playlist</p></summary>
+        <div id="audio-player-container">
+            <!-- The default song played -->
+            <audio src="./playlists/reflex/Floating Museum - Ghost In The Shell.mp3" preload="auto"></audio>
+            <!-- Play/pause button -->
+            <button id="play-icon"></button>
+            <!-- Current time mark -->
+            <span id="current-time" class="time">0:00</span>
+            <!-- Seek slider -->
+            <input type="range" id="seek-slider" max="100" value="0">
+            <!-- Audio duration -->
+            <span id="duration" class="time">0:00</span>
+            <!-- Volume output -->
+            <output id="volume-output">100</output>
+            <!-- Volume slider -->
+            <input type="range" id="volume-slider" max="100" value="100">
+            <!-- Audio/mute button -->
+            <button id="mute-icon"></button>
+            <!-- button/images for playlists -->
+            <img id="epic" class="imai" src="./img/epic.png" height="100px" width="100px">
+            <img id="mind" class="imai" src="./img/mind.png" height="100px" width="100px">
+            <img id="cool" class="imai" src="./img/cool.png" height="100px" width="100px">
+        </details>
     </div>
+
+</div>
 
 </body>
 <script src="lottie.js"></script>

@@ -3,6 +3,7 @@ body {
   padding: 0;
   letter-spacing: -1px;
   background:black;
+  color:white;
 }
 *{
   user-select: none;
@@ -19,6 +20,22 @@ button {
     height: 40px;
     float: left;
 }
+#draggableDiv{
+    z-index:-1;
+    position:absolute;
+    cursor: move;
+    border-radius: 20px;
+    font-style: oblique;
+    color:rgb(160, 160, 160);
+    background: rgb(0, 0, 0);
+    height: 264px;
+    max-width: 500px;
+    width: 95%;
+    --seek-before-width: 0%;
+    --volume-before-width: 100%;
+    --buffered-width: 0%;
+}
+
 #audio-player-container {
     position:absolute;
     cursor: move;

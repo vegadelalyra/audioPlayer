@@ -516,8 +516,11 @@ cool.oncontextmenu = ()=>{
     return false;
 };
 
+
+
 //MOVABLE || DRAGGABLE 
-dragElement(audioPlayerContainer);
+var draggableDiv = document.querySelector("#draggableDiv");
+dragElement(draggableDiv);
 
 function dragElement(elmnt){
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
