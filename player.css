@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: -1px;
-  background:black;
+  background:rgb(0, 0, 0);
   color:white;
 }
 *{
@@ -23,19 +23,11 @@ button {
 #draggableDiv{
     z-index:-1;
     position:absolute;
-    cursor: move;
+    cursor: default;
     border-radius: 20px;
-    font-style: oblique;
-    color:rgb(160, 160, 160);
-    background: rgb(0, 0, 0);
-    height: 264px;
-    max-width: 500px;
-    width: 95%;
-    --seek-before-width: 0%;
-    --volume-before-width: 100%;
-    --buffered-width: 0%;
+    height: min-content;
+    width: 450px;
 }
-
 #audio-player-container {
     position:absolute;
     cursor: move;
@@ -43,14 +35,15 @@ button {
     font-style: oblique;
     color:rgb(160, 160, 160);
     background: rgb(0, 0, 0);
-    height: 264px;
-    max-width: 500px;
-    width: 95%;
+    height: 240px;
+    width:fit-content;
+    left:-2px;
     --seek-before-width: 0%;
     --volume-before-width: 100%;
     --buffered-width: 0%;
 }
 #audio-player-container::before {
+    top:80px;
     position: absolute;
     content: '';
     width: calc(100% + 4px);
@@ -61,16 +54,22 @@ button {
     z-index: -1;
     border-radius: 5px;
 }
-p {
+#plays {
     position: absolute;
     top: -18px;
-    right: 5%;
-    padding: 0 5px;
     margin: 0;
     font-size: 28px;
     font-style: oblique;
     background: rgb(0, 0, 0);
     color:rgb(250, 246, 233);
+    z-index:10;
+    cursor: pointer;
+}
+summary{
+    display:flex;
+}
+#plays:active{    
+    cursor:move;
 }
 #play-icon {
     margin: 20px 2.5% 10px 2.5%;
@@ -212,7 +211,7 @@ input[type="range"]:active::-ms-thumb {
   position:relative;
   padding-top:15px;
   padding-right: 40px;
-  left:50px;
+  left:35px;
   display:inline-block;
   cursor: pointer;
   -webkit-user-drag: none;
