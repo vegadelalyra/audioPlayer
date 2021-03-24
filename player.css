@@ -106,6 +106,7 @@ output {
     background: rgba(58, 58, 58, 0.6);
 }
 #volume-slider::before {
+    background:gray;
     width: var(--volume-before-width);
 }
 #mute-icon {
@@ -211,7 +212,7 @@ input[type="range"]:active::-ms-thumb {
   position:relative;
   padding-top:15px;
   padding-right: 40px;
-  left:35px;
+  left:20px;
   display:inline-block;
   cursor: pointer;
   -webkit-user-drag: none;

@@ -521,7 +521,6 @@ cool.oncontextmenu = ()=>{
 //MOVABLE || DRAGGABLE 
 var draggableDiv = document.querySelector("#draggableDiv");
 
-
 var PADDING = 1;
 
 var rect;
@@ -537,8 +536,8 @@ dragElement(draggableDiv);
 dragElement(title);
 
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
     /* if present, the header is where you move the DIV from:*/
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
@@ -580,7 +579,7 @@ function dragElement(elmnt) {
         || newTop < viewport.top
         || newLeft + rect.width > viewport.right
         || newTop + rect.height > viewport.bottom
-    ) {
+        ) {
     	// the element will hit the boundary, do nothing...
     } else {
       // set the element's new position:
@@ -610,7 +609,7 @@ function divKiller(){
         divKills--;
     }
 }
-
 details.addEventListener('toggle',divKiller);
-
 document.oncontextmenu = () => {return false};
+//end.
+
